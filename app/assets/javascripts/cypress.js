@@ -271,7 +271,7 @@ function jumpToElement(element){
       } else {    
         return;
       }
-     window.location.hash = element;
+     if (history.pushState) {window.history.pushState(null,document.title,element);}
      } catch(e) {}
   }
 }
